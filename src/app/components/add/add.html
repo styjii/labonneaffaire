@@ -4,24 +4,30 @@
     <div class="mb-3">
       <label for="title" class="form-label">Titre de l'article</label>
       <input type="text" class="form-control" id="title" name="title" minlength="4" [(ngModel)]="titleToAdd" placeholder="Entrez le titre de l'article" #title="ngModel" required>
-      <div *ngIf="title.invalid && (title.dirty || title.touched)">
-        <div *ngIf="title.errors?.['required']">
+      @if (title.invalid && (title.dirty || title.touched)) {
+        @if (title.errors?.['required']) {
+          <div>
             Titre obligatoire
-        </div>
-        <div *ngIf="title.errors?.['minlength']">
+          </div>
+        }
+        @if (title.errors?.['minlength']) {
+          <div>
             Le titre doit avoir minimum 4 caractères
-        </div>
-      </div>
+          </div>
+        }
+      }
     </div>
 
     <div class="mb-3">
       <label for="price" class="form-label">Prix</label>
       <input type="number" class="form-control" id="price" name="price" [(ngModel)]="priceToAdd" placeholder="Entrez le prix" step="0.01" #price="ngModel" required min="0">
-      <div *ngIf="price.invalid && (price.dirty || price.touched)">
-        <div *ngIf="price.errors?.['required']">
+      @if (price.invalid && (price.dirty || price.touched)) {
+        @if (price.errors?.['required']) {
+          <div>
             Prix obligatoire
-        </div>
-      </div>
+          </div>
+        }
+      }
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Ajouter l'article</button>
   </form>

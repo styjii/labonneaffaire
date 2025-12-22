@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from '../../data';
 import { Article } from '../article/article';
-import { NgForOf, NgIf } from '@angular/common';
 
 interface ListArticlesInterface {
   id: number
@@ -15,7 +14,7 @@ interface ListArticlesInterface {
 
 @Component({
   selector: 'app-list-articles',
-  imports: [Article, NgIf, NgForOf],
+  imports: [Article],
   templateUrl: './list-articles.html',
   styleUrl: './list-articles.css',
   providers: [Data],

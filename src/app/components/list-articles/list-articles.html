@@ -1,20 +1,23 @@
 <!-- contenu -->
 <div class="container">
-  <div id="alertMsg" *ngIf="message">
-    <p>{{ message }}</p>
-  </div>
+  @if (message) {
+    <div id="alertMsg">
+      <p>{{ message }}</p>
+    </div>
+  }
 
   <div id="home">
-    <app-article 
-      *ngFor="let element of listArticles"
-      [articleTitle]="element.articleTitle"
-      [articlePrice]="element.articlePrice"
-      [description]="element.description"
-      [urlImg]="element.urlImg"
-      [textAltImg]="element.textAltImg"
-      [dispo]="element.dispo"
-      [idArticle]="element.id"
-      (info)="onDisplay($event)">
-    </app-article>
+    @for (element of listArticles; track element.id) {
+      <app-article
+        [articleTitle]="element.articleTitle"
+        [articlePrice]="element.articlePrice"
+        [description]="element.description"
+        [urlImg]="element.urlImg"
+        [textAltImg]="element.textAltImg"
+        [dispo]="element.dispo"
+        [idArticle]="element.id"
+        (info)="onDisplay($event)">
+      </app-article>
+    }
   </div>
 </div>

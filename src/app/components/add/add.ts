@@ -1,10 +1,9 @@
-import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule],
   templateUrl: './add.html',
   styleUrl: './add.css',
 })
