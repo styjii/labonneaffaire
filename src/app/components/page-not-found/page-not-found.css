@@ -1,4 +1,8 @@
 #error {
-    text-align: center;
-    padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
 }

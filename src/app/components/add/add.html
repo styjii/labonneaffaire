@@ -1,0 +1,28 @@
+<div class="container py-4">
+  <h2>Ajouter un nouvel article</h2>
+  <form class="mt-4" (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">Titre de l'article</label>
+      <input type="text" class="form-control" id="title" name="title" minlength="4" [(ngModel)]="titleToAdd" placeholder="Entrez le titre de l'article" #title="ngModel" required>
+      <div *ngIf="title.invalid && (title.dirty || title.touched)">
+        <div *ngIf="title.errors?.['required']">
+            Titre obligatoire
+        </div>
+        <div *ngIf="title.errors?.['minlength']">
+            Le titre doit avoir minimum 4 caractères
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Prix</label>
+      <input type="number" class="form-control" id="price" name="price" [(ngModel)]="priceToAdd" placeholder="Entrez le prix" step="0.01" #price="ngModel" required min="0">
+      <div *ngIf="price.invalid && (price.dirty || price.touched)">
+        <div *ngIf="price.errors?.['required']">
+            Prix obligatoire
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Ajouter l'article</button>
+  </form>
+</div>
