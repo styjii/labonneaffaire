@@ -1,59 +1,121 @@
-# Labonneaffaire
+# La Bonne Affaire
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+Un projet Angular pour découvrir et gérer des articles avec fonctionnalités interactives.
 
-## Development server
+## Description
 
-To start a local development server, run:
+Cette application Angular permet d'afficher une liste d'articles, de consulter leurs détails, et d'interagir avec eux via un système de likes/dislikes. L'interface est responsive et utilise Bootstrap pour le styling.
 
-```bash
-ng serve
-```
+## Fonctionnalités
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- ✅ Affichage d'une liste d'articles en grille responsive
+- ✅ Consultation des détails d'un article
+- ✅ Système de likes/dislikes avec compteur
+- ✅ Messages d'alerte dynamiques lors des interactions
+- ✅ Commentaires sur les articles
+- ✅ Indicateur de disponibilité des articles
+- ✅ Navigation entre les pages
 
-## Code scaffolding
+## Prérequis
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Avant de commencer, assurez-vous d'avoir installé :
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure)
+- [npm](https://www.npmjs.com/) (inclus avec Node.js)
+- [Angular CLI](https://angular.io/cli) (version 17 ou supérieure)
 
 ```bash
-ng build
+npm install -g @angular/cli
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Installation
 
-## Running unit tests
+1. Clonez le repository :
+```bash
+git clone <url-du-repository>
+cd labonneaffaire
+```
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+2. Installez les dépendances :
+```bash
+npm install
+```
+
+## Utilisation
+
+### Développement
+
+Pour lancer l'application en mode développement :
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+L'application sera accessible sur `http://localhost:4200`.
 
-For end-to-end (e2e) testing, run:
+### Build
+
+Pour construire l'application pour la production :
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Les fichiers de build seront générés dans le dossier `dist/`.
 
-## Additional Resources
+### Tests
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Pour exécuter les tests unitaires :
+
+```bash
+npm test
+```
+
+## Structure du projet
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── article/          # Composant article individuel
+│   │   ├── details/          # Page de détails d'un article
+│   │   ├── list-articles/    # Liste des articles
+│   │   └── page-not-found/   # Page 404
+│   ├── data.ts               # Données mockées des articles
+│   ├── app.config.ts         # Configuration de l'application
+│   ├── app.routes.ts         # Routes de l'application
+│   └── app.ts                # Composant principal
+├── assets/                   # Ressources statiques
+├── index.html                # Template HTML principal
+└── styles.css                # Styles globaux
+```
+
+## Technologies utilisées
+
+- **Angular 17+** : Framework principal
+- **TypeScript** : Langage de programmation
+- **Bootstrap 5** : Framework CSS pour le responsive design
+- **RxJS** : Programmation réactive
+
+## Scripts disponibles
+
+- `npm start` : Lance le serveur de développement
+- `npm run build` : Construit l'application pour la production
+- `npm test` : Exécute les tests unitaires
+- `npm run lint` : Vérifie le code avec ESLint
+
+## Contribution
+
+1. Forkez le projet
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/nouvelle-fonctionnalite`)
+3. Commitez vos changements (`git commit -m 'Ajout d'une nouvelle fonctionnalité'`)
+4. Pushez vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
+5. Ouvrez une Pull Request
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## Auteur
+
+Développé dans le cadre d'un apprentissage Angular.
