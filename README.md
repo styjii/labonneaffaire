@@ -31,12 +31,14 @@ npm install -g @angular/cli
 ## Installation
 
 1. Clonez le repository :
+
 ```bash
 git clone <url-du-repository>
 cd labonneaffaire
 ```
 
-2. Installez les dépendances :
+1. Installez les dépendances :
+
 ```bash
 npm install
 ```
@@ -73,7 +75,7 @@ npm test
 
 ## Structure du projet
 
-```
+```text
 src/
 ├── app/
 │   ├── components/
