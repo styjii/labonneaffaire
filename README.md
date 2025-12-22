@@ -82,6 +82,7 @@ src/
 │   │   ├── article/          # Composant article individuel
 │   │   ├── details/          # Page de détails d'un article
 │   │   ├── list-articles/    # Liste des articles
+│   │   ├── add/              # Formulaires
 │   │   └── page-not-found/   # Page 404
 │   ├── data.ts               # Données mockées des articles
 │   ├── app.config.ts         # Configuration de l'application
